@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:traveling_app/widgets/category_item.dart';
+import '../app_data.dart';
+
+class CategoriesScreen extends StatelessWidget {
+  const CategoriesScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('التصنيفات'),
+        centerTitle: true,
+      backgroundColor: Colors.blue,
+      ),
+      body:GridView(
+        padding: EdgeInsets.all(10.0),
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200.0,
+          childAspectRatio: 7 / 8,
+          mainAxisSpacing: 10.0,
+          crossAxisSpacing: 10.0,
+
+        ),
+        children: Categories_data.map(
+            (categoryData) {
+            return CategoryItem(categoryData.title, categoryData.imageUrl);
+            }
+        ).toList(),
+      ),
+    );
+  }
+}
