@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './models/category.dart';
-// import '/models/trip.dart';
+import './models/trip.dart';
 
 const Categories_data = const [
   Category(
@@ -40,7 +40,7 @@ const Categories_data = const [
     'https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c2tpaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60',
   ),
 ];
-/*
+
 const Trips_data = const [
   Trip(
     id: 'm1',
@@ -49,7 +49,7 @@ const Trips_data = const [
     ],
     title: 'جبال الألب',
     tripType: TripType.Exploration,
-    season: Season.Winter,
+    season : Season.Winter,
     imageUrl:
     'https://images.unsplash.com/photo-1611523658822-385aa008324c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8bW91bmF0aW5zfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
     duration: 20,
@@ -78,7 +78,7 @@ const Trips_data = const [
       'c1',
     ],
     title: 'جبال الجنوب',
-    tripType: TripType.Exploration,
+    tripType: TripType.Recovery,
     season: Season.Winter,
     imageUrl:
     'https://images.unsplash.com/photo-1612456225451-bb8d10d0131d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjZ8fG1vdW5hdGluc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
@@ -525,4 +525,3 @@ const Trips_data = const [
     isInWinter: true,
   ),
 ];
-*/

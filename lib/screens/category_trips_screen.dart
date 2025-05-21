@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:traveling_app/app_data.dart';
 
 class CategoryTripsScreen extends StatelessWidget {
 
@@ -17,6 +18,9 @@ class CategoryTripsScreen extends StatelessWidget {
     }
     final categoryId = args['id'];
     final categoryTitle = args['title'];
+    final filteredTrips = Trips_data.where((trip) {
+      return trip.categories.contains(categoryId);
+    }).toList();
 
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +31,12 @@ class CategoryTripsScreen extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      body: Center(child: Text('قائمة برحلات هذا التصنيف')),
+      body: ListView.builder(
+          itemBuilder: (context , index) {
+          return Text(filteredTrips[index].title);
+          },
+        itemCount: filteredTrips.length,
+      )
     );
   }
 
