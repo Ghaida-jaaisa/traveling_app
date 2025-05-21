@@ -9,7 +9,9 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('التصنيفات'),
+        title: Text('التصنيفات',
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
       backgroundColor: Colors.blue,
       ),
@@ -24,7 +26,10 @@ class CategoriesScreen extends StatelessWidget {
         ),
         children: Categories_data.map(
             (categoryData) {
-            return CategoryItem(categoryData.title, categoryData.imageUrl);
+            return CategoryItem(
+                categoryData.id,
+                categoryData.title,
+                categoryData.imageUrl);
             }
         ).toList(),
       ),

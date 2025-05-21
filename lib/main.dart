@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:traveling_app/screens/category_trips_screen.dart';
 import '/screens/categories_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -22,13 +23,19 @@ class MyApp extends StatelessWidget {
         Locale('ar' , 'AE'), // English
       ],
       theme: ThemeData(
-          primarySwatch: Colors.blue,
+        primaryColor: Colors.blue,
          colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
          fontFamily: 'ElMessiri',
         useMaterial3: true,
       ),
       title: 'Travel App',
-      home: CategoriesScreen(),
+      // home: CategoriesScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (ctx) => CategoriesScreen(), //default
+           CategoryTripsScreen.screenRoute : (ctx) => CategoryTripsScreen()
+
+      },
     );
   }
 }
