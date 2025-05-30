@@ -7,15 +7,7 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('التصنيفات',
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-      ),
-      body: GridView(
+    return GridView(
         padding: EdgeInsets.all(10.0),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200.0,
@@ -31,7 +23,6 @@ class CategoriesScreen extends StatelessWidget {
                   categoryData.imageUrl);
             }
         ).toList(),
-      ),
-    );
+      );
   }
   }

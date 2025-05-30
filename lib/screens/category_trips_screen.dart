@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:traveling_app/app_data.dart';
-
+import 'package:traveling_app/widgets/trip_item.dart';
+// import 'package:traveling_app/app_data.dart';
+import '../app_data.dart';
 class CategoryTripsScreen extends StatelessWidget {
 
   // Variables
@@ -33,7 +34,14 @@ class CategoryTripsScreen extends StatelessWidget {
       ),
       body: ListView.builder(
           itemBuilder: (context , index) {
-          return Text(filteredTrips[index].title);
+          return TripItem(
+            id: filteredTrips[index].id,
+            title: filteredTrips[index].title,
+            imageUrl: filteredTrips[index].imageUrl,
+            duration: filteredTrips[index].duration,
+            tripType: filteredTrips[index].tripType,
+            season: filteredTrips[index].season,
+          );
           },
         itemCount: filteredTrips.length,
       )
