@@ -4,12 +4,13 @@ import 'package:traveling_app/screens/trip_details_screen.dart';
 
 class TripItem extends StatelessWidget {
   // const TripItem({super.key});
- final String id;
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
   final TripType tripType;
   final Season season;
+  final Function removeItem;
 
   TripItem({
     required this.id,
@@ -18,6 +19,7 @@ class TripItem extends StatelessWidget {
     required this.duration,
     required this.tripType,
     required this.season,
+    required this.removeItem,
   });
 
   String get seasonText {
@@ -61,12 +63,18 @@ class TripItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void selectTrip(BuildContext ctx) {
-      Navigator.of(context).pushNamed(TripDetailsScreen.screenRoute,
-      arguments: id);
+      Navigator.of(
+        context,
+      ).pushNamed(TripDetailsScreen.screenRoute, arguments: id).then((result) {
+        // i have trip id
+        if (result != null) {
+          removeItem(result);
+        }
+      });
     }
 
     return InkWell(
-      onTap:() => selectTrip,
+      onTap: () => selectTrip(context),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 7,
